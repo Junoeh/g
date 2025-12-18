@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{ chapter[2] }}</h1>
+<h3>Chapter {{ chapter[1] }}</h3>
+
+<p style="white-space: pre-line;">{{ chapter[3] }}</p>
+
+<a class="btn" href="/chapter/{{ chapter_id }}/delete" style="background:#b30000;">
+    Delete Chapter
+</a>
+
+<a class="btn" href="/novel/{{ chapter[0] }}">Back to novel</a>
+
+{% endblock %}

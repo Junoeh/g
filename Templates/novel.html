@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{ novel[0] }}</h1>
+<p>{{ novel[1] }}</p>
+
+<h2>Chapters</h2>
+
+{% for c in chapters %}
+<div class="chapter-card">
+    <a class="btn" href="/chapter/{{ c[0] }}">
+        Chapter {{ c[1] }}: {{ c[2] }}
+    </a>
+
+    <a class="btn" href="/chapter/{{ c[0] }}/delete" 
+       style="background:#b30000; margin-left:10px;">
+        Delete
+    </a>
+</div>
+
+
+
+{% endfor %}
+
+{% if chapters|length == 0 %}
+<p>No chapters yet.</p>
+{% endif %}
+
+<br>
+<a class="btn" href="/novel/{{ novel_id }}/chapter/new">Add Chapter</a>
+
+<br><br>
+<a class="btn" href="/novel/{{ novel_id }}/delete" style="background:#b30000;">
+    Delete Novel
+</a>
+
+
+{% endblock %}
