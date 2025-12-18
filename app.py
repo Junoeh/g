@@ -20,7 +20,7 @@ db = mysql.connector.connect(
 
 
 @app.route('/')
-def index():
+def bruh():
     return redirect('/novels')
 
 @app.route("/novels")
